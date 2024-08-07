@@ -12,7 +12,7 @@ These changes are done in order to improve the overall usability, and as workaro
 1. **Removed the `Deprecated: true` property from the below schemas**:
 
    - **Original**:
-      - Deprecated: `true`
+      - `Deprecated: true`
 
    - **Updated**:
       - Removed the `deprecated` parameter
@@ -20,12 +20,12 @@ These changes are done in order to improve the overall usability, and as workaro
    - **Reasons**: The original configuration was generated successfully, but it led to compile-time warnings. To ensure smoother compilation and avoid potential issues, the configuration has been revised.
 
 
-2. **Removed the `default:null` property of certain schemas**:
+2. **Removed the `default:null` property of from the below schemas**:
 
    - **Changed Schemas**: `CreateCompletionRequest`,`ChatCompletionStreamOptions`,`CreateChatCompletionRequest`
 
    - **Original**:
-      - default: `null`
+      - `default: null`
 
    - **Updated**:
       - Removed the `default` parameter 
