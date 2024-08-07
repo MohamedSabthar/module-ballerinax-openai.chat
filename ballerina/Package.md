@@ -14,16 +14,16 @@ To use the OpenAI Connector, you must have access to the OpenAI API through a [O
 
 
 2. Navigate to **Dashboard** -> **API keys**.
-<img src=/docs/setup/resources/api-key-dashboard.png alt="OpenAI Dashbaord | API keys" style="width: 70%;">
+<img src=/docs/setup/resources/navigate-api-key-dashboard.png alt="Navigate to API key section" style="width: 70%;">
 
 3. Click on the **Create new secret key** button.
-<img src=/docs/setup/resources/create-new-secrete-key.png alt="Create New API key" style="width: 70%;">
+<img src=/docs/setup/resources/api-key-dashboard.png alt="OpenAI Dashbaord | API keys" style="width: 70%;">
 
 4. Fill the details and click on Create secret key.
-<img src=/docs/setup/resources/saved-key.png alt="Generated New API key" style="width: 70%;">
+<img src=/docs/setup/resources/create-new-secrete-key.png alt="Create New API key" style="width: 70%;">
 
 5. Store the API key securely to use in your application.
-
+<img src=/docs/setup/resources/saved-key.png alt="Generated New API key" style="width: 70%;">
 
 ## Quickstart
 
