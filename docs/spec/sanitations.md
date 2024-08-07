@@ -9,7 +9,7 @@ This document records the sanitation done on top of the official OpenAPI specifi
 The OpenAPI specification is obtained from the [OpenAPI specification for the OpenAI API](https://github.com/openai/openai-openapi/blob/master/openapi.yaml). 
 These changes are done in order to improve the overall usability, and as workarounds for some known language limitations.
 
-1. **Removed the `Deprecated: true` property of certain schemas**:
+1. **Removed the `Deprecated: true` property from the below schemas**:
 
    - **Original**:
       - Deprecated: `true`
@@ -25,7 +25,7 @@ These changes are done in order to improve the overall usability, and as workaro
    - **Changed Schemas**: `CreateCompletionRequest`,`ChatCompletionStreamOptions`,`CreateChatCompletionRequest`
 
    - **Original**:
-      - defaullt: `null`
+      - default: `null`
 
    - **Updated**:
       - Removed the `default` parameter 
