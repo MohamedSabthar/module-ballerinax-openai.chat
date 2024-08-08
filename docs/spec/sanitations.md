@@ -11,6 +11,8 @@ These changes are done in order to improve the overall usability, and as workaro
 
 1. **Removed the `Deprecated: true` property from the below schemas**:
 
+   - **Changed Schemas**: `ChatCompletionRequestAssistantMessage`,`ChatCompletionRequestFunctionMessage`,`ChatCompletionFunctions`,`ChatCompletionResponseMessage`,`ChatCompletionStreamResponseDelta`,`CreateChatCompletionRequest`
+
    - **Original**:
       - `Deprecated: true`
 
