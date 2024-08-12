@@ -20,18 +20,19 @@ import ballerina/os;
 configurable boolean isLiveServer = ?;
 configurable string token = isLiveServer ? os:getEnv("token") : "test";
 final string mockServiceUrl = "http://localhost:9090";
+final Client openAIChat = check initClient();
+
+function initClient() returns Client|error {
+    if isLiveServer {
+        return new ({auth: {token}});
+    }
+    return new ({auth: {token}}, mockServiceUrl);
+}
 
 @test:Config{
     groups: ["live_tests", "mock_tests"]
 }
 isolated function testChatCompletion() returns error? {
-    
-    Client openAIChat;
-    if isLiveServer {
-        openAIChat = check new ({auth: {token}});
-    } else {
-        openAIChat = check new ({auth: {token}}, mockServiceUrl);
-    }
 
     CreateChatCompletionRequest request = {
         model: "gpt-4o-mini",
