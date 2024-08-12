@@ -44,7 +44,6 @@ http:Service mockService = service object {
             "object": "chat.completion",
             "usage": {"completion_tokens": 11, "prompt_tokens": 13, "total_tokens": 24}
         };
-
         return response;
     }
 };
