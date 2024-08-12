@@ -12,7 +12,6 @@ To use the OpenAI Connector, you must have access to the OpenAI API through a [O
 
 1. Open the [OpenAI Platform Dashboard](https://platform.openai.com).
 
-
 2. Navigate to **Dashboard** -> **API keys**.
 <img src=/docs/setup/resources/navigate-api-key-dashboard.png alt="Navigate to API key section" style="width: 70%;">
 
@@ -23,11 +22,7 @@ To use the OpenAI Connector, you must have access to the OpenAI API through a [O
 <img src=/docs/setup/resources/create-new-secrete-key.png alt="Create New API key" style="width: 70%;">
 
 5. Store the API key securely to use in your application.
-<img src=/docs/setup/resources/saved-key.png alt="Generated New API key" style="width: 70%;">on Create secret key.
 <img src=/docs/setup/resources/saved-key.png alt="Generated New API key" style="width: 70%;">
-
-5. Store the API key securely to use in your application.
-
 
 ## Quickstart
 
@@ -66,7 +61,6 @@ Now, you can utilize available connector operations.
 #### Generate a response for given message
 
 ```ballerina
-
 public function main() returns error? {
 
     // Create a chat completion request.
@@ -80,7 +74,6 @@ public function main() returns error? {
             
     };
 
-    // Call the API.
     CreateChatCompletionResponse response = check openAIChat->/chat/completions.post(request);
 }
 ```
@@ -90,7 +83,6 @@ public function main() returns error? {
 ```bash
 bal run
 ```
-
 
 ## Examples
 
