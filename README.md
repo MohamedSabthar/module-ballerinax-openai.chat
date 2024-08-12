@@ -46,13 +46,7 @@ import ballerinax/openai.chat;
 
 ### Step 2: Create a new connector instance
 
-1. Create a `Config.toml` file and configure the API key (obtained in the above steps) as follows:
-
-```bash
-token = "<API key>"
-```
-
-2. Create and initialize a `chat:Client` connector with it.
+Create a `chat:Client` with the obtained API Key and initialize the connector.
 
 ```ballerina
 chat:Client openAIChat = check new({
