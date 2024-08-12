@@ -21,13 +21,13 @@ listener http:Listener httpListener = new (9090);
 
 http:Service mockService = service object {
     resource function post chat/completions(@http:Payload CreateChatCompletionRequest payload) returns CreateChatCompletionResponse|http:BadRequest {
-       
+
         // Validate the request payload
         if (payload.messages[0]["content"].toString() is "" || payload.model.toString() is "") {
             return http:BAD_REQUEST;
         }
 
-       // Mock response
+        // Mock response
         CreateChatCompletionResponse response = {
             id: "chatcmpl-00000",
             choices: [
@@ -45,12 +45,11 @@ http:Service mockService = service object {
             "usage": {"completion_tokens": 11, "prompt_tokens": 13, "total_tokens": 24}
         };
 
-        return response; 
+        return response;
     }
 };
 
 function init() returns error? {
-
     if isLiveServer {
         log:printInfo("Skiping mock server initialization as the tests are running on live server");
         return;
