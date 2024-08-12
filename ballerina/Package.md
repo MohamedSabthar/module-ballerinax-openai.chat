@@ -2,7 +2,7 @@
 
 [OpenAI](https://openai.com/), an AI research organization dedicated to developing beneficial AI for humanity, provides the [OpenAI API](https://platform.openai.com/docs/api-reference/introduction) for accessing its powerful AI models, enabling tasks such as natural language processing and image generation.
 
-The `ballarinax/openai.chat` package offers functionality to connect and interact with [Chat Completion related endpoints of OpenAI API](https://platform.openai.com/docs/api-reference/chat) Enabling seamless interaction with the advanced GPT-4 models developed by OpenAI for diverse conversational and text generation tasks.
+The `ballarinax/openai.chat` package offers functionality to connect and interact with [chat completion related endpoints of OpenAI REST API v1](https://platform.openai.com/docs/api-reference/chat) Enabling seamless interaction with the advanced GPT-4 models developed by OpenAI for diverse conversational and text generation tasks.
 
 ## Setup guide
 
