@@ -51,13 +51,11 @@ http:Service mockService = service object {
 
 function init() returns error? {
 
-    // This is to avoid starting the mock server when running the tests on live server
     if isLiveServer {
         log:printInfo("Skiping mock server initialization as the tests are running on live server");
         return;
     }
 
-    // Start the mock server
     log:printInfo("Initiating mock server...");
     check httpListener.attach(mockService, "/");
     check httpListener.'start();

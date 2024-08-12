@@ -26,7 +26,6 @@ final string mockServiceUrl = "http://localhost:9090";
 }
 isolated function testChatCompletion() returns error? {
     
-    // Create an OpenAI chat client with the appropriate service URL.
     Client openAIChat;
     if isLiveServer {
         openAIChat = check new ({auth: {token}});
@@ -34,17 +33,14 @@ isolated function testChatCompletion() returns error? {
         openAIChat = check new ({auth: {token}}, mockServiceUrl);
     }
 
-    // Create a chat completion request.
     CreateChatCompletionRequest request = {
         model: "gpt-4o-mini",
         messages: [{"role": "user", "content": "This is a test message"}]
     };
 
     do{
-        // Call the API.
         CreateChatCompletionResponse response = check openAIChat->/chat/completions.post(request);
         
-        // Check the response.
         string? content = response.choices[0].message.content;
         test:assertTrue(content !is (), msg = "An error occurred with response content");
         
