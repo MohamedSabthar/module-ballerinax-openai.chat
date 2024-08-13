@@ -23,7 +23,7 @@ http:Service mockService = service object {
     resource function post chat/completions(@http:Payload CreateChatCompletionRequest payload) returns CreateChatCompletionResponse|http:BadRequest {
 
         // Validate the request payload
-        if (payload.messages[0]["content"].toString() is "" || payload.model.toString() is "") {
+        if payload.messages[0]["content"].toString() is "" || payload.model.toString() is "" {
             return http:BAD_REQUEST;
         }
 
