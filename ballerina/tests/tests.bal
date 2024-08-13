@@ -33,19 +33,12 @@ function initClient() returns Client|error {
     groups: ["live_tests", "mock_tests"]
 }
 isolated function testChatCompletion() returns error? {
-
     CreateChatCompletionRequest request = {
         model: "gpt-4o-mini",
         messages: [{"role": "user", "content": "This is a test message"}]
     };
-
-    do {
-        CreateChatCompletionResponse response = check openAIChat->/chat/completions.post(request);
-
-        string? content = response.choices[0].message.content;
-        test:assertTrue(content !is (), msg = "An error occurred with response content");
-
-    } on fail error e {
-        test:assertFail(msg = "An error occurred: " + e.message());
-    }
+    CreateChatCompletionResponse response = check openAIChat->/chat/completions.post(request);
+    test:assertTrue(response.choices.length() > 0, msg = "Expected at least one completion choice");
+    string? content = response.choices[0].message.content;
+    test:assertTrue(content !is (), msg = "Expected content in the completion response");
 }
