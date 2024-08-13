@@ -20,7 +20,7 @@ import ballerina/test;
 configurable boolean isLiveServer = ?;
 configurable string token = isLiveServer ? os:getEnv("token") : "test";
 final string mockServiceUrl = "http://localhost:9090";
-final Client openaiChat = check initClient();
+final Client openAIChat = check initClient();
 
 function initClient() returns Client|error {
     if isLiveServer {
@@ -39,9 +39,9 @@ isolated function testChatCompletion() returns error? {
         messages: [{"role": "user", "content": "This is a test message"}]
     };
 
-    do {
-        CreateChatCompletionResponse response = check openaiChat->/chat/completions.post(request);
-
+    do{
+        CreateChatCompletionResponse response = check openAIChat->/chat/completions.post(request);
+        
         string? content = response.choices[0].message.content;
         test:assertTrue(content !is (), msg = "An error occurred with response content");
 
