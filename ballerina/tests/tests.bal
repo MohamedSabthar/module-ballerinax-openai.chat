@@ -39,9 +39,9 @@ isolated function testChatCompletion() returns error? {
         messages: [{"role": "user", "content": "This is a test message"}]
     };
 
-    do{
+    do {
         CreateChatCompletionResponse response = check openAIChat->/chat/completions.post(request);
-        
+
         string? content = response.choices[0].message.content;
         test:assertTrue(content !is (), msg = "An error occurred with response content");
 
