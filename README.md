@@ -49,7 +49,9 @@ import ballerinax/openai.chat;
 Create a `chat:Client` with the obtained API Key and initialize the connector.
 
 ```ballerina
-chat:Client openAIChat = check new({
+configurable string token = ?;
+
+final chat:Client openAIChat = check new({
     auth: {
         token
     }
@@ -68,13 +70,11 @@ public function main() returns error? {
 
     // Create a chat completion request.
     CreateChatCompletionRequest request = {
-
         model: "gpt-4o-mini",
         messages: [{
             "role": "user",
             "content": "What is Ballerina programming language?"
             }]
-            
     };
 
     CreateChatCompletionResponse response = check openAIChat->/chat/completions.post(request);
