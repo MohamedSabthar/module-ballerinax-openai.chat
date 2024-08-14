@@ -1,0 +1,14 @@
+[package]
+org = "manodya"
+name = "CLI_assistant"
+version = "0.1.0"
+distribution = "2201.9.2"
+
+[[dependency]]
+org = "ballerinax"
+name = "openai.chat"
+version = "2.0.1"
+repository = "local"
+
+[build-options]
+observabilityIncluded = true
