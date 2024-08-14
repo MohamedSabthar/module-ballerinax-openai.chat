@@ -2,13 +2,18 @@
 
 The `ballerinax/openai.chat` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/ballerina-platform/module-ballerinax-openai.chat/tree/main/examples), covering use cases like cache management, session management, and rate limiting.
 
-[//]: # (TODO: Add examples)
-1. 
-2. 
+1. [CLI Assistant](https://github.com/ballerina-platform/module-ballerinax-openai.chat/tree/main/examples/CLI-assistant) - Execute the user's task description by generating and running the appropriate command in the command line interface of their selected operating system.
+2. [Image to Markdown Document Converter](https://github.com/ballerina-platform/module-ballerinax-openai.chat/tree/main/examples/image-to-markdown-converter) - Generate detailed markdown documentation based on the image content.
 
 ## Prerequisites
 
-[//]: # (TODO: Add prerequisites)
+1. Generate a API as described in the [Setup guide](https://central.ballerina.io/ballerinax/openai.chat/latest#setup-guide).
+
+2. For each example, create a `Config.toml` file the related configuration. Here's an example of how your `Config.toml` file should look:
+
+    ```toml
+    token = "<API Key>"
+    ```
 
 ## Running an Example
 
