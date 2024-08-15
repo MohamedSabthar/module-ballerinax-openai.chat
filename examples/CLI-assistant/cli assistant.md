@@ -1,10 +1,10 @@
-## Command Line Interface Assistant 
+## Command line interface assistant 
 
 This CLI assistant is designed to simplify and automate terminal tasks for users who may not be familiar with command-line interfaces. By leveraging the OpenAI API v1's chat completion capabilities, the assistant helps users perform tasks by interpreting natural language descriptions and generating the appropriate commands based on their operating system.
 
 ## Prerequisites
 
-1. Generate a API as described in the [Setup guide](https://central.ballerina.io/ballerinax/openai.chat/latest#setup-guide).
+1. Generate an API key as described in the [Setup guide](https://central.ballerina.io/ballerinax/openai.chat/latest#setup-guide).
 
 2. For each example, create a `Config.toml` file the related configuration. Here's an example of how your `Config.toml` file should look:
 
@@ -12,7 +12,7 @@ This CLI assistant is designed to simplify and automate terminal tasks for users
     token = "<API Key>"
     ```
 
-## Running an Example
+## Running an example
 
 Execute the following commands to build an example from the source:
 
