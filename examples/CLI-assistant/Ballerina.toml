@@ -1,6 +1,6 @@
 [package]
 org = "wso2"
-name = "CLI_assistant"
+name = "cli_assistant"
 version = "0.1.0"
 distribution = "2201.9.2"
 
