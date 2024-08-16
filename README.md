@@ -69,7 +69,7 @@ Now, you can utilize available connector operations.
 public function main() returns error? {
 
     // Create a chat completion request.
-    CreateChatCompletionRequest request = {
+    chat:CreateChatCompletionRequest request = {
         model: "gpt-4o-mini",
         messages: [{
             "role": "user",
@@ -77,7 +77,7 @@ public function main() returns error? {
             }]
     };
 
-    CreateChatCompletionResponse response = check openAIChat->/chat/completions.post(request);
+    chat:CreateChatCompletionResponse response = check openAIChat->/chat/completions.post(request);
 }
 ```
 
