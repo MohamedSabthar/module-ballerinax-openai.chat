@@ -34,8 +34,6 @@ To use the OpenAI Connector, you must have access to the OpenAI API through a [O
 
 ## Quickstart
 
-## Quickstart
-
 To use the `OpenAI Chat` connector in your Ballerina application, update the `.bal` file as follows:
 
 ### Step 1: Import the module
