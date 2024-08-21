@@ -19,7 +19,7 @@ These changes are done in order to improve the overall usability, and as workaro
    - **Updated**:
       - Removed the `default` parameter 
 
-   - **Reason**: This change is done as a workaround for ballerina openapi tool not allowing to generate the client.
+   - **Reason**: This change is done as a temperary workaround until the Ballerina OpenAPI tool supports OpenAPI Specification version v3.1.x (Currently supported upto version 3.0.0).
 
 ## OpenAPI cli command
 
