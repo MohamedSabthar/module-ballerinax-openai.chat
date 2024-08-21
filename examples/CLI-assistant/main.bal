@@ -19,12 +19,12 @@ import ballerina/os;
 import ballerinax/openai.chat;
 
 configurable string token = ?;
-final chat:Client openAIChat = check new ({auth: {token}});
 
 public function main() returns error? {
+    final chat:Client openAIChat = check new ({auth: {token}});
     string osType = getOSType();
     string taskDescription = getTaskDescription();
-    string|error command = generateCLICommand(osType, taskDescription);
+    string|error command = generateCLICommand(osType, taskDescription, openAIChat);
 
     // if the command generation was unsuccessful, terminate the program
     if command is error {
@@ -70,7 +70,7 @@ function getTaskDescription() returns string {
     return taskDescription;
 }
 
-function generateCLICommand(string osType, string taskDescription) returns string|error {
+function generateCLICommand(string osType, string taskDescription, chat:Client openAIChat) returns string|error {
     chat:CreateChatCompletionRequest request = {
         model: "gpt-4o-mini",
         messages: [
@@ -102,7 +102,7 @@ function executeCommand(string command, string osType) returns error? {
     io:println("Executing command...");
 
     string[] cmdArray;
-    if (osType == "windows") {
+    if osType == "windows" {
         // Use PowerShell to execute the command on Windows
         cmdArray = ["powershell", "-Command", command];
     } else {
@@ -113,7 +113,7 @@ function executeCommand(string command, string osType) returns error? {
     os:Process exec = check os:exec({value: cmdArray[0], arguments: cmdArray.slice(1)});
 
     int status = check exec.waitForExit();
-    if (status != 0) {
+    if status != 0 {
         io:println(string `Process exited with status: ${status}. The command may have failed.`);
     } else {
         io:println("Process executed successfully.");

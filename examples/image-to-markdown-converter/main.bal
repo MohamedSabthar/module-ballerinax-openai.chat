@@ -19,9 +19,9 @@ import ballerina/io;
 import ballerinax/openai.chat;
 
 configurable string token = ?;
-final chat:Client openAIChat = check new ({auth: {token}});
 
 public function main() returns error? {
+    final chat:Client openAIChat = check new ({auth: {token}});
     string imagePath = getImageFilePath();
     string|error base64Image = encodeImageToBase64(imagePath);
 
@@ -29,7 +29,7 @@ public function main() returns error? {
         io:println(base64Image);
         return;
     }
-    string|error markdownDoc = generateDocumentation(base64Image);
+    string|error markdownDoc = generateDocumentation(base64Image, openAIChat);
 
     if markdownDoc is error {
         io:println(markdownDoc);
@@ -49,7 +49,7 @@ function encodeImageToBase64(string imagePath) returns string|error {
     return imageBytes.toBase64();
 }
 
-function generateDocumentation(string base64Image) returns string|error {
+function generateDocumentation(string base64Image, chat:Client openAIChat) returns string|error {
     string prompt = "Generate markdown documentation based on the content of the following image. Include detailed descriptions of any diagrams, notes, or code snippets present. Structure the documentation with appropriate headings, and provide a summary of the key concepts discussed. Additionally, include any relevant annotations or comments that might aid in understanding the content";
 
     chat:CreateChatCompletionRequest request = {
