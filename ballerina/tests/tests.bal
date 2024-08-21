@@ -17,8 +17,8 @@
 import ballerina/os;
 import ballerina/test;
 
-configurable boolean isLiveServer = os:getEnv("isLiveServer") == "true";
-configurable string token = isLiveServer ? os:getEnv("token") : "test";
+configurable boolean isLiveServer = os:getEnv("IS_LIVE_SERVER") == "true";
+configurable string token = isLiveServer ? os:getEnv("OPENAI_TOKEN") : "test";
 final string mockServiceUrl = "http://localhost:9090";
 final Client openAIChat = check initClient();
 
