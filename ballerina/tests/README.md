@@ -38,13 +38,13 @@ Alternatively, you can set the environment variable directly.
 For Linux or macOS:
 
 ```bash
-export isLiveServer=false
+export IS_LIVE_SERVER=false
 ```
 
 For Windows:
 
 ```bash
-setx isLiveServer false
+setx IS_LIVE_SERVER false
 ```
 
 Then, run the following command to execute the tests:
@@ -71,15 +71,15 @@ Alternatively, you can set your authentication credentials as environment variab
 For Linux or macOS:
 
 ```bash
-export isLiveServer=true
-export token="<your-openAI-api-token>"
+export IS_LIVE_SERVER=true
+export OPENAI_TOKEN="<your-openAI-api-token>"
 ```
 
 For Windows:
 
 ```bash
-setx isLiveServer true
-setx token <your-openAI-api-token>
+setx IS_LIVE_SERVER true
+setx OPENAI_TOKEN <your-openAI-api-token>
 ```
 
 Then, run the following command to execute the tests:
