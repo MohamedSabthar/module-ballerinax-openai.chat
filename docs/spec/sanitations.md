@@ -21,6 +21,18 @@ These changes are done in order to improve the overall usability, and as workaro
 
    - **Reason**: This change is done as a temporary workaround until the Ballerina OpenAPI tool supports OpenAPI Specification version v3.1.x (Currently supported upto version 3.0.0).
 
+2. **Added `nullable: true` property to system_fingerprint**:
+
+   - **Changed Schemas**: `CreateCompletionResponse`
+
+   - **Updated**:
+      - `system_fingerprint:
+         // ... Omitted for brevity 
+         nullable = true` 
+
+   - **Reason**: This change explicitly specifies that the system_fingerprint field can be null, which is important for proper schema validation and client code generation.
+
+
 ## OpenAPI cli command
 
 The following command was used to generate the Ballerina client from the OpenAPI specification. The command should be executed from the repository root directory.
