@@ -13816,6 +13816,7 @@ components:
             Can be used in conjunction with the `seed` request parameter to
             understand when backend changes have been made that might impact
             determinism.
+          nullable: true
         object:
           type: string
           description: The object type, which is always `chat.completion`.
